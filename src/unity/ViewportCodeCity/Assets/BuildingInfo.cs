@@ -5,7 +5,6 @@ using Newtonsoft.Json;
 public class BuildingInfo
 {
     // Position vector
-
     [JsonProperty("locX")] public float locX;
 
     [JsonProperty("locY")] public float locY;

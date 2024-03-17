@@ -22,11 +22,11 @@ public class BuildingJSONFileHandler // : MonoBehaviour
     public WorldData ReadFromFile()
     {
         /* Initalize buildings read to empty list in case of failure. */
-        var buildingsRead = new List<BuildingInfo>();
+        List<BuildingInfo> buildingsRead = new List<BuildingInfo>();
 
         Debug.Log($"Right before Path.Combine, fileName is {fileName}");
         /* Obtain the entire file path. */
-        var fullPath = Path.Combine(dirPath, fileName);
+        string fullPath = Path.Combine(dirPath, fileName);
 
         Debug.Log($"Looking for file at {fullPath}...");
 
@@ -34,10 +34,10 @@ public class BuildingJSONFileHandler // : MonoBehaviour
             try
             {
                 /* Initialize JSON serial string for holding pure characters (hopefully JSON). */
-                var serialJson = "";
-                using (var stream = new FileStream(fullPath, FileMode.Open))
+                string serialJson = "";
+                using (FileStream stream = new FileStream(fullPath, FileMode.Open))
                 {
-                    using (var reader = new StreamReader(stream))
+                    using (StreamReader reader = new StreamReader(stream))
                     {
                         /* Read entire JSON file using FileStreams and StreamnReaders that are dealloc'd after read (via using statements). */
                         serialJson = reader.ReadToEnd();
@@ -57,7 +57,7 @@ public class BuildingJSONFileHandler // : MonoBehaviour
             Debug.LogError("File at: " + fullPath + " does not exist. Moving on with empty building set.");
 
         /* Package data obtained in a single WorldData object to return. */
-        var dataRead = new WorldData(buildingsRead);
+        WorldData dataRead = new WorldData(buildingsRead);
 
         return dataRead;
     }
