@@ -23,17 +23,17 @@ public class BuildingArtist : MonoBehaviour, IArtist
             GameObject buildingObject = Instantiate<GameObject>(
                 buildingPrefab,
                 new Vector3(
-                    buildingInfo.locX,
-                    buildingInfo.locY,
-                    buildingInfo.locZ
+                    buildingInfo.locX + buildingInfo.dimX / 2,
+                    buildingInfo.locZ + buildingInfo.dimZ / 2,
+                    buildingInfo.locY + buildingInfo.dimY / 2
                 ),
                 Quaternion.identity
             );
 
             buildingObject.transform.localScale = new Vector3(
                 buildingInfo.dimX,
-                buildingInfo.dimY,
-                buildingInfo.dimZ
+                buildingInfo.dimZ,
+                buildingInfo.dimY
             );
         }
     }

@@ -1,24 +1,24 @@
 [{
     "locX" : "0",
-    "locZ" : "0",
     "locY" : "0",
+    "locZ" : "0",
     "dimX" : "2",
     "dimZ" : "2.5",
     "dimY" : "4"
   },
   {
     "locX" : "2",
-    "locZ" : "2.5",
-    "locY" : "0",
+    "locY" : "2.5",
+    "locZ" : "0",
     "dimX" : "3.5",
-    "dimZ" : "4",
-    "dimY" : "7"
+    "dimY" : "4",
+    "dimZ" : "7"
   },
   {
     "locX" : "-2",
-    "locZ" : "-2.5",
-    "locY" : "0",
+    "locY" : "-2.5",
+    "locZ" : "0",
     "dimX" : "2",
-    "dimZ" : "2",
-    "dimY" : "3"
+    "dimY" : "2",
+    "dimZ" : "3"
   }]
