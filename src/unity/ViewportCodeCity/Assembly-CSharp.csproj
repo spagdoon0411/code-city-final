@@ -695,14 +695,14 @@
     <Reference Include="Unity.RenderPipelines.Universal.Runtime">
       <HintPath>/Users/spandansuthar/Projects/code-city-final/src/unity/ViewportCodeCity/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.PlasticSCM.Editor">
-      <HintPath>/Users/spandansuthar/Projects/code-city-final/src/unity/ViewportCodeCity/Library/ScriptAssemblies/Unity.PlasticSCM.Editor.dll</HintPath>
+    <Reference Include="Unity.Burst.Editor">
+      <HintPath>/Users/spandansuthar/Projects/code-city-final/src/unity/ViewportCodeCity/Library/ScriptAssemblies/Unity.Burst.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst">
       <HintPath>/Users/spandansuthar/Projects/code-city-final/src/unity/ViewportCodeCity/Library/ScriptAssemblies/Unity.Burst.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Burst.Editor">
-      <HintPath>/Users/spandansuthar/Projects/code-city-final/src/unity/ViewportCodeCity/Library/ScriptAssemblies/Unity.Burst.Editor.dll</HintPath>
+    <Reference Include="Unity.PlasticSCM.Editor">
+      <HintPath>/Users/spandansuthar/Projects/code-city-final/src/unity/ViewportCodeCity/Library/ScriptAssemblies/Unity.PlasticSCM.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>/Users/spandansuthar/Projects/code-city-final/src/unity/ViewportCodeCity/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
@@ -722,14 +722,14 @@
     <Reference Include="Unity.VisualScripting.Core">
       <HintPath>/Users/spandansuthar/Projects/code-city-final/src/unity/ViewportCodeCity/Library/ScriptAssemblies/Unity.VisualScripting.Core.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>/Users/spandansuthar/Projects/code-city-final/src/unity/ViewportCodeCity/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.VisualScripting.Core.Editor">
       <HintPath>/Users/spandansuthar/Projects/code-city-final/src/unity/ViewportCodeCity/Library/ScriptAssemblies/Unity.VisualScripting.Core.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
       <HintPath>/Users/spandansuthar/Projects/code-city-final/src/unity/ViewportCodeCity/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>/Users/spandansuthar/Projects/code-city-final/src/unity/ViewportCodeCity/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Config.Runtime">
       <HintPath>/Users/spandansuthar/Projects/code-city-final/src/unity/ViewportCodeCity/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Config.Runtime.dll</HintPath>
@@ -761,14 +761,14 @@
     <Reference Include="Unity.Performance.Profile-Analyzer.Editor">
       <HintPath>/Users/spandansuthar/Projects/code-city-final/src/unity/ViewportCodeCity/Library/ScriptAssemblies/Unity.Performance.Profile-Analyzer.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
+      <HintPath>/Users/spandansuthar/Projects/code-city-final/src/unity/ViewportCodeCity/Library/ScriptAssemblies/Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TestTools.CodeCoverage.Editor">
       <HintPath>/Users/spandansuthar/Projects/code-city-final/src/unity/ViewportCodeCity/Library/ScriptAssemblies/Unity.TestTools.CodeCoverage.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Model">
       <HintPath>/Users/spandansuthar/Projects/code-city-final/src/unity/ViewportCodeCity/Library/ScriptAssemblies/Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
-      <HintPath>/Users/spandansuthar/Projects/code-city-final/src/unity/ViewportCodeCity/Library/ScriptAssemblies/Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.State.Editor">
       <HintPath>/Users/spandansuthar/Projects/code-city-final/src/unity/ViewportCodeCity/Library/ScriptAssemblies/Unity.VisualScripting.State.Editor.dll</HintPath>
