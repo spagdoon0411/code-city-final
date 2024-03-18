@@ -47,13 +47,19 @@
   <ItemGroup>
     <Compile Include="Assets/BuildingJSONFileHandler.cs" />
     <Compile Include="Assets/OrbitAroundGameObject.cs" />
+    <Compile Include="Assets/BuildingInfoUI.cs" />
     <Compile Include="Assets/BuildingInfo.cs" />
     <Compile Include="Assets/BuildingDataRepository.cs" />
+    <Compile Include="Assets/PedestalArtist.cs" />
     <Compile Include="Assets/BuildingArtist.cs" />
     <Compile Include="Assets/IArtistManager.cs" />
+    <Compile Include="Assets/Building.cs" />
     <Compile Include="Assets/WorldData.cs" />
+    <Compile Include="Assets/BuildingUI.cs" />
     <Compile Include="Assets/IArtist.cs" />
     <None Include="Assets/WanzyeeStudio/ThirdParty/SaladLab/Json.Net.Unity3D/LICENSE.txt" />
+    <None Include="Assets/MainUI.uxml" />
+    <None Include="Assets/InfoDisplayText.uss" />
     <None Include="Assets/WanzyeeStudio/ThirdParty/SaladLab/Json.Net.Unity3D/JsonNet.unitypackage.json" />
     <None Include="Assets/WanzyeeStudio/ThirdParty/SaladLab/Json.Net.Unity3D/link.xml" />
     <Reference Include="UnityEngine">

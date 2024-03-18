@@ -11,6 +11,8 @@ public class BuildingDataRepository : MonoBehaviour, IArtistManager
     
     /* Place for a single observer-like building artist. Accessible from Unity editor. */
     public BuildingArtist buildingArtist;
+
+    public PedestalArtist pedestalArtist;
     
     /* Internal reference providing interface to JSON file of buildings.*/
     private BuildingJSONFileHandler handler;
@@ -51,13 +53,14 @@ public class BuildingDataRepository : MonoBehaviour, IArtistManager
              Debug.Log(
                  $"Building found with size \n\t{buildingInfo.dimX} \n\t{buildingInfo.dimY} \n\t{buildingInfo.dimZ} \nat location \n\t{buildingInfo.locX} \n\t{buildingInfo.locY} \n\t{buildingInfo.locZ}.");
          
-         CommissionArtist();
+         CommissionArtists();
     }
 
     /* From the Observer design pattern; calls Draw on the observing artist. */
-    public void CommissionArtist()
+    public void CommissionArtists()
     {
         buildingArtist.Draw();
+        pedestalArtist.Draw();
     }
     
     /* Loads a session from the provided path with the file handler. */

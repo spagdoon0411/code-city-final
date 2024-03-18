@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8500174584007454413}
   - component: {fileID: 2477244641178642543}
   - component: {fileID: 827182258065919301}
+  - component: {fileID: -1669765351439820301}
   m_Layer: 0
   m_Name: Building
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 994645275029947777}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -62,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a13cd1f3663a24a0f95d317dde2e0e23, type: 2}
+  - {fileID: 2100000, guid: d1a1781ebe6f541508b6dc25eb8dd719, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -105,3 +106,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-1669765351439820301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 994645275029947777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b918776a133ba47a6b6518eabe727659, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverColor: {r: 1, g: 0.19814405, b: 0, a: 0}
+  clickColor: {r: 1, g: 0.4283458, b: 0, a: 0}
+  restColor: {r: 0, g: 0, b: 0, a: 0}

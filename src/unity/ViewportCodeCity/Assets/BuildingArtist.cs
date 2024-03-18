@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BuildingArtist : MonoBehaviour, IArtist
 {
-    public GameObject buildingPrefab;
+    public Building buildingPrefab;
 
     public void Start()
     {
@@ -20,7 +20,7 @@ public class BuildingArtist : MonoBehaviour, IArtist
         foreach (BuildingInfo buildingInfo in buildingInfos)
         {
             /* Places a cube with the BuildingInfo's location and size information */
-            GameObject buildingObject = Instantiate<GameObject>(
+            Building buildingObject = Instantiate<Building>(
                 buildingPrefab,
                 new Vector3(
                     buildingInfo.locX + buildingInfo.dimX / 2,
@@ -29,6 +29,8 @@ public class BuildingArtist : MonoBehaviour, IArtist
                 ),
                 Quaternion.identity
             );
+
+            buildingObject.Info = buildingInfo;
 
             buildingObject.transform.localScale = new Vector3(
                 buildingInfo.dimX,
