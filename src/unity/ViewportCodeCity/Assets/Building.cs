@@ -40,10 +40,4 @@ public class Building : MonoBehaviour
         buildingMaterial.SetColor("_FresnelColor", restColor);
         BuildingInfoUI.Instance.Clear();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
