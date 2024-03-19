@@ -45,8 +45,6 @@ public class PedestalArtist : MonoBehaviour, IArtist
          
          Vector3 scaleVec = new Vector3(scaleAdjust * maxX + edgeMargin, 1, scaleAdjust * maxZ + edgeMargin);
         
-         Debug.Log($"scaleVec is {scaleVec}");
-         
          // /* Scale the ground to accommodate for that largest coordinate. Include the margin. */
          ground.transform.localScale = scaleVec;
          ground.transform.position = new Vector3(0, -groundHeight, 0);
