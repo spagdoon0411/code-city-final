@@ -59,7 +59,7 @@ class BuildingInfo {
 
 public class JsonBuilder {
 
-    public static void createBuildingInfoJson(List<BuildingInfo> buildings) {
+    public void createBuildingInfoJson(List<BuildingInfo> buildings) {
         Gson gson = new Gson();
         String json = gson.toJson(buildings);
 
@@ -70,11 +70,11 @@ public class JsonBuilder {
         }
     }
 
-    public static void main(String[] args) {
+//    public static void main(String[] args) {
         // Test the JSON creation process -- Make createBuildingInfoJson method static during testing
-        List<BuildingInfo> buildings = new ArrayList<>();
-        buildings.add(new BuildingInfo("3.4", "4.5", "6.5", "3.4", "3.2", "12.7", "3", "12", "BuildingA", Arrays.asList("BuildingB"), Arrays.asList("BuildingC")));
-        createBuildingInfoJson(buildings);
+//        List<BuildingInfo> buildings = new ArrayList<>();
+//        buildings.add(new BuildingInfo("3.4", "4.5", "6.5", "3.4", "3.2", "12.7", "3", "12", "BuildingA", Arrays.asList("BuildingB"), Arrays.asList("BuildingC")));
+//        createBuildingInfoJson(buildings);
 
     }
 }
