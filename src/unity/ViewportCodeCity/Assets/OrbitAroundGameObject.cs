@@ -35,9 +35,6 @@ namespace TDLN.CameraControllers
                 var pos = Input.mousePosition;
                 var dpiScale = 1f;
                 if (pos.x < 380 * dpiScale && Screen.height - pos.y < 250 * dpiScale) return;
-                // comment out these two lines if you don't want to hide mouse curser or you have a UI button 
-                // Cursor.visible = false;
-                // Cursor.lockState = CursorLockMode.Locked;
                 if (Screen.dpi < 1) dpiScale = 1;
                 else if (Screen.dpi >= 200) dpiScale = 1;
                 else dpiScale = Screen.dpi / 200f;
@@ -48,12 +45,6 @@ namespace TDLN.CameraControllers
                 var position = rotation * new Vector3(0.0f, 0.0f, -distance) + target.transform.position;
                 transform.rotation = rotation;
                 transform.position = position;
-            }
-            else
-            {
-                // comment out these two lines if you don't want to hide mouse curser or you have a UI button 
-                // Cursor.visible = true;
-                // Cursor.lockState = CursorLockMode.None;
             }
 
             if (Math.Abs(prevDistance - distance) > 0.001f)
