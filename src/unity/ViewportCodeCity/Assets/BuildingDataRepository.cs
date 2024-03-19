@@ -30,8 +30,6 @@ public class BuildingDataRepository : MonoBehaviour, IArtistManager
     {
          // Use the current working directory as the place to look for building info to load.
          dirPath = Directory.GetCurrentDirectory();
-         Debug.Log($"Current working directory is: {dirPath}");
-         Debug.Log($"Current file name set is: {fileName}");
         
          /* Sets the singleton reference to this instance if it's not set. If it is is set,
           throws an error; there should only be one BuildingRepository instance. */
@@ -74,7 +72,5 @@ public class BuildingDataRepository : MonoBehaviour, IArtistManager
         }
 
         WorldData = handler.ReadFromFile();
-        Debug.Log("ReadFromFile returned " + WorldData + " on line 76 in BuildingDataRepository.");
-        Debug.Log("This is when the worldData object of the repo was set.");
     }
 }
