@@ -29,7 +29,6 @@ public class Building : MonoBehaviour
      and highlights the building. */
     private void OnMouseEnter()
     {
-        Debug.Log($"At line 34, BuildingInfoUI.Instance is {BuildingInfoUI.Instance}");
         buildingMaterial.SetColor("_FresnelColor", hoverColor);
         BuildingInfoUI.Instance.DisplayBuildingInfo(Info);
     }
