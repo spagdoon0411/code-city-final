@@ -13,7 +13,7 @@ namespace TDLN.CameraControllers
         public float distance = 10.0f;
         public float xSpeed = 250.0f;
         public float ySpeed = 120.0f;
-        public float yMinLimit = -20;
+        public float yMinLimit = 10;
         public float yMaxLimit = 80;
         private float prevDistance;
         private float x;

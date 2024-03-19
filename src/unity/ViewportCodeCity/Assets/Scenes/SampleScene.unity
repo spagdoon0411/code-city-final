@@ -468,7 +468,7 @@ MonoBehaviour:
   distance: 50
   xSpeed: 250
   ySpeed: 120
-  yMinLimit: -20
+  yMinLimit: 0
   yMaxLimit: 80
 --- !u!114 &963194230
 MonoBehaviour:
@@ -930,7 +930,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f2ae7027e0214d5ca8bf05199c5040e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fileName: test.json
+  fileName: BuildingData.json
   dirPath: 
   buildingArtist: {fileID: 2013839438}
   pedestalArtist: {fileID: 1014878632}
