@@ -49,6 +49,7 @@
     <Compile Include="Assets/OrbitAroundGameObject.cs" />
     <Compile Include="Assets/BuildingInfoUI.cs" />
     <Compile Include="Assets/BuildingInfo.cs" />
+    <Compile Include="Assets/PostProcessingVolume.cs" />
     <Compile Include="Assets/BuildingDataRepository.cs" />
     <Compile Include="Assets/PedestalArtist.cs" />
     <Compile Include="Assets/BuildingArtist.cs" />
