@@ -9,6 +9,8 @@ import java.util.List;
 
 public class Viewport {
 
+    private static final Platform platform = Platform.MAC;
+
     private static int idAssignCounter = 0;
 
     private final int id;
@@ -31,7 +33,17 @@ public class Viewport {
                 + File.separator + "java"
                 + File.separator + "org"
                 + File.separator + "example"
-                + File.separator  + "Viewport.app";
+                + File.separator  + getPlatformExeName();
+    }
+
+    private String getPlatformExeName()
+    {
+        String name = "";
+        switch (platform) {
+            case MAC: name = "ViewportMac.app";
+            case WINDOWS: name = "ViewportWindows.app";
+        }
+        return name;
     }
 
     private void clearPriorViewportDirectory(File viewportDirectory)
