@@ -85,7 +85,7 @@ public class Viewport {
         return viewportTempExe;
     }
 
-    public void launch() throws IOException {
+    public void launch() {
 
         File tempDir = FileUtils.getTempDirectory();
         File viewportExe = new File("src/main/java/org/example/Viewport.app");
