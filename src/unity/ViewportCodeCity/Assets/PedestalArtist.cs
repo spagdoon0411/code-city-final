@@ -32,12 +32,6 @@ public class PedestalArtist : MonoBehaviour, IArtist
         return Math.Abs(getCenterCoord(r, rSize)) + 0.5f * rSize;
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
     public void Draw()
     {
          /* Obtain building information from repository. */
@@ -56,13 +50,5 @@ public class PedestalArtist : MonoBehaviour, IArtist
          // /* Scale the ground to accommodate for that largest coordinate. Include the margin. */
          ground.transform.localScale = scaleVec;
          ground.transform.position = new Vector3(0, -groundHeight, 0);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        /* Scale the ground to accommodate for that largest coordinate. Include the margin. */
-        // ground.transform.localScale = new Vector3(maxX + edgeMargin, 1, maxZ + edgeMargin);
-        // ground.transform.localScale = new Vector3(100, 1, 50);
     }
 }
