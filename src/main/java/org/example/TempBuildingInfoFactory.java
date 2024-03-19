@@ -17,7 +17,7 @@ public class TempBuildingInfoFactory {
         b1.locX = 0;
         b1.locY = 0;
         b1.locZ = 0;
-        b1.dimX = 200.0f;
+        b1.dimX = 2.0f;
         b1.dimY = 2.5f;
         b1.dimZ = 4.0f;
 

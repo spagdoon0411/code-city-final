@@ -59,11 +59,6 @@ public class TempJSONEncoder implements IEncoder {
     {
         /* On directory-creation success, copy the JSON data to the temporary directory */
         File tempJsonFile = new File(tempDir.getAbsolutePath() + File.separator + "BuildingData.json");
-
-        System.out.println(tempJsonFile);
-        System.out.println();
-        System.out.println(buildingSerialization);
-
         createJsonFileFromString(tempJsonFile, buildingSerialization);
     }
 
