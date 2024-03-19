@@ -24,7 +24,6 @@ public class BuildingJSONFileHandler // : MonoBehaviour
         /* Initalize buildings read to empty list in case of failure. */
         List<BuildingInfo> buildingsRead = new List<BuildingInfo>();
 
-        Debug.Log($"Right before Path.Combine, fileName is {fileName}");
         /* Obtain the entire file path. */
         string fullPath = Path.Combine(dirPath, fileName);
 
@@ -44,6 +43,8 @@ public class BuildingJSONFileHandler // : MonoBehaviour
                     }
                 }
 
+                Debug.Log($"Found file at {fullPath}");
+                
                 /* Parse JSON serial string to a List of BuildingInfos (JsonUtility takes care of parsing). */
                 buildingsRead = JsonConvert.DeserializeObject<IEnumerable<BuildingInfo>>(serialJson).ToList();
             }
