@@ -13,6 +13,8 @@ public class Viewport {
 
     private static int idAssignCounter = 0;
 
+    private File viewportExe;
+
     private final int id;
 
     public int getId()
@@ -28,20 +30,26 @@ public class Viewport {
     {
         this.id = idAssignCounter++;
         this.buildingInfos = buildingInfos;
-        templateExePath = "src"
+        this.templateExePath = "src"
                 + File.separator + "main"
                 + File.separator + "java"
                 + File.separator + "org"
                 + File.separator + "example"
                 + File.separator  + getPlatformExeName();
+
+        this.viewportExe = new File(templateExePath);
     }
 
     private String getPlatformExeName()
     {
         String name = "";
         switch (platform) {
-            case MAC: name = "ViewportMac.app";
-            case WINDOWS: name = "ViewportWindows.app";
+            case MAC:
+                name = "ViewportMac.app";
+                break;
+            case WINDOWS:
+                name = "ViewportWindows.app";
+                break;
         }
         return name;
     }
@@ -108,7 +116,6 @@ public class Viewport {
     public void open() {
 
         File tempDir = FileUtils.getTempDirectory();
-        File viewportExe = new File(templateExePath);
         File viewportDirectory = new File(tempDir.getPath() + File.separator + "Viewport" + id);
 
         makeTempViewportDirectory(viewportDirectory);
