@@ -11,19 +11,27 @@ public class Viewport {
 
     private static int idAssignCounter = 0;
 
-    private int id;
+    private final int id;
 
     public int getId()
     {
         return this.id;
     }
 
-    private List<TempBuildingInfo> buildingInfos;
+    private final List<TempBuildingInfo> buildingInfos;
+
+    private final String templateExePath;
 
     public Viewport(List<TempBuildingInfo> buildingInfos)
     {
         this.id = idAssignCounter++;
         this.buildingInfos = buildingInfos;
+        templateExePath = "src"
+                + File.separator + "main"
+                + File.separator + "java"
+                + File.separator + "org"
+                + File.separator + "example"
+                + File.separator  + "Viewport.app";
     }
 
     private void clearPriorViewportDirectory(File viewportDirectory)
@@ -85,10 +93,10 @@ public class Viewport {
         return viewportTempExe;
     }
 
-    public void launch() {
+    public void open() {
 
         File tempDir = FileUtils.getTempDirectory();
-        File viewportExe = new File("src/main/java/org/example/Viewport.app");
+        File viewportExe = new File(templateExePath);
         File viewportDirectory = new File(tempDir.getPath() + File.separator + "Viewport" + id);
 
         makeTempViewportDirectory(viewportDirectory);

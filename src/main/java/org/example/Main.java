@@ -11,7 +11,7 @@ public class Main {
 
         List<TempBuildingInfo> testBuildingInfos = new ArrayList<>();
         Viewport v = new Viewport(testBuildingInfos);
-        v.launch();
+        v.open();
 
     }
 }
