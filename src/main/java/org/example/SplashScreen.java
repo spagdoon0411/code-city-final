@@ -77,12 +77,4 @@ public class SplashScreen extends JWindow {
         }
     }
 
-    @Override
-    public void paint(Graphics g) {
-        super.paintComponents(g);
-
-        g.setFont(new Font("Ariel", Font.PLAIN, 100));
-        g.drawString("Code City", 0, 100);
-    }
-
 }
