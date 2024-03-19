@@ -1,0 +1,12 @@
+.buildinginfoclassname {
+    -unity-font-style: normal;
+    color: rgb(243, 233, 210);
+    -unity-font: url("project://database/Assets/BebasNeue-Regular.ttf?fileID=12800000&guid=e9ab0be49fc6c4dbd9800f1dce0c5617&type=3#BebasNeue-Regular");
+    -unity-font-definition: initial;
+}
+
+.buildinginfotext {
+    color: rgb(243, 233, 210);
+    -unity-font: url("project://database/Assets/JetBrainsMono-Medium.ttf?fileID=12800000&guid=2fc9f53d7f7834a62b0a2dc2a1e9728d&type=3#JetBrainsMono-Medium");
+    -unity-font-definition: initial;
+}

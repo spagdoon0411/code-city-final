@@ -1,8 +1,10 @@
 //  A simple Unity C# script for orbital movement around a target gameobject
 //  Author: Ashkan Ashtiani
 //  Gist on Github: https://gist.github.com/3dln/c16d000b174f7ccf6df9a1cb0cef7f80
+
 using System;
 using UnityEngine;
+
 namespace TDLN.CameraControllers
 {
     public class CameraOrbit : MonoBehaviour
@@ -13,16 +15,18 @@ namespace TDLN.CameraControllers
         public float ySpeed = 120.0f;
         public float yMinLimit = -20;
         public float yMaxLimit = 80;
-        float x = 0.0f;
-        float y = 0.0f;
-        void Start()
+        private float prevDistance;
+        private float x;
+        private float y;
+
+        private void Start()
         {
             var angles = transform.eulerAngles;
             x = angles.y;
             y = angles.x;
         }
-        float prevDistance;
-        void LateUpdate()
+
+        private void LateUpdate()
         {
             if (distance < 2) distance = 2;
             distance -= Input.GetAxis("Mouse ScrollWheel") * 2;
@@ -32,8 +36,8 @@ namespace TDLN.CameraControllers
                 var dpiScale = 1f;
                 if (pos.x < 380 * dpiScale && Screen.height - pos.y < 250 * dpiScale) return;
                 // comment out these two lines if you don't want to hide mouse curser or you have a UI button 
-                Cursor.visible = false;
-                Cursor.lockState = CursorLockMode.Locked;
+                // Cursor.visible = false;
+                // Cursor.lockState = CursorLockMode.Locked;
                 if (Screen.dpi < 1) dpiScale = 1;
                 else if (Screen.dpi >= 200) dpiScale = 1;
                 else dpiScale = Screen.dpi / 200f;
@@ -48,9 +52,10 @@ namespace TDLN.CameraControllers
             else
             {
                 // comment out these two lines if you don't want to hide mouse curser or you have a UI button 
-                Cursor.visible = true;
-                Cursor.lockState = CursorLockMode.None;
+                // Cursor.visible = true;
+                // Cursor.lockState = CursorLockMode.None;
             }
+
             if (Math.Abs(prevDistance - distance) > 0.001f)
             {
                 prevDistance = distance;
@@ -60,7 +65,8 @@ namespace TDLN.CameraControllers
                 transform.position = po;
             }
         }
-        static float ClampAngle(float angle, float min, float max)
+
+        private static float ClampAngle(float angle, float min, float max)
         {
             if (angle < -360)
                 angle += 360;
