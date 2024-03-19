@@ -6,11 +6,6 @@ public class BuildingArtist : MonoBehaviour, IArtist
 {
     public Building buildingPrefab;
 
-    public void Start()
-    {
-        Debug.Log("This is when the Start() method for BuildingArtist was run.");
-    }
-
     public void Draw()
     {
         Debug.Log("This is when the Draw method of the BuildingArtist object read the repo's WorldData");
