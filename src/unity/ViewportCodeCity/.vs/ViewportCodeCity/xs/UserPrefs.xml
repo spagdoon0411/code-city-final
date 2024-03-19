@@ -1,0 +1,33 @@
+﻿<Properties StartupConfiguration="{3CD46832-CA19-E28C-B9CF-93820BFFB385}|">
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="be2fca32-f451-4e5d-975e-d68827708d6d" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench>
+    <Files>
+      <File FileName="Assets/BuildingInfo.cs" Line="18" Column="1" />
+      <File FileName="Assets/BuildingDataRepository.cs" Line="10" Column="1" />
+      <File FileName="Assets/OrbitAroundGameObject.cs" Line="1" Column="1" />
+      <File FileName="Assets/BuildingJSONFileHandler.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="Assets/WorldData.cs" Line="13" Column="1" NotebookId="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="ViewportCodeCity" expanded="True" selected="True" />
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+      <Pad Id="MonoDevelop.UnitTesting.TestPad">
+        <State name="__root__">
+          <Node name="Unity" selected="True" />
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
