@@ -24,8 +24,8 @@ public class BuildingJSONFileHandler // : MonoBehaviour
         /* Initalize buildings read to empty list in case of failure. */
         List<BuildingInfo> buildingsRead = new List<BuildingInfo>();
 
-        /* Obtain the entire file path. */
-        string fullPath = Path.Combine(dirPath, fileName);
+        /* Obtain the entire file path. Unity strictly uses forward slashes regardless of platform. */
+        string fullPath = dirPath + "/" + fileName; // Path.Combine(dirPath, fileName);
 
         Debug.Log($"Looking for file at {fullPath}...");
 

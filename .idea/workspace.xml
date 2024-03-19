@@ -4,7 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d24e3bf7-9204-4dba-a6f1-ed1dc3ac88f8" name="Changes" comment="" />
+    <list default="true" id="d24e3bf7-9204-4dba-a6f1-ed1dc3ac88f8" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/TempBuildingInfoFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/TempBuildingInfoFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/TempJSONEncoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/TempJSONEncoder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/UnityViewport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/UnityViewport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unity/ViewportCodeCity/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/unity/ViewportCodeCity/Assembly-CSharp.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unity/ViewportCodeCity/Assets/BuildingArtist.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/unity/ViewportCodeCity/Assets/BuildingArtist.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unity/ViewportCodeCity/Assets/BuildingDataRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/unity/ViewportCodeCity/Assets/BuildingDataRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unity/ViewportCodeCity/Assets/BuildingJSONFileHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/unity/ViewportCodeCity/Assets/BuildingJSONFileHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unity/ViewportCodeCity/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/src/unity/ViewportCodeCity/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unity/ViewportCodeCity/Assets/UniversalRenderer.asset" beforeDir="false" afterPath="$PROJECT_DIR$/src/unity/ViewportCodeCity/Assets/UniversalRenderer.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unity/ViewportCodeCity/Logs/shadercompiler-UnityShaderCompiler0.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unity/ViewportCodeCity/ProjectSettings/Packages/com.unity.testtools.codecoverage/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/unity/ViewportCodeCity/ProjectSettings/Packages/com.unity.testtools.codecoverage/Settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unity/ViewportCodeCity/ProjectSettings/ShaderGraphSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/src/unity/ViewportCodeCity/ProjectSettings/ShaderGraphSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unity/ViewportCodeCity/UserSettings/Layouts/default-2022.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/src/unity/ViewportCodeCity/UserSettings/Layouts/default-2022.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unity/ViewportCodeCity/ViewportCodeCity.sln" beforeDir="false" afterPath="$PROJECT_DIR$/src/unity/ViewportCodeCity/ViewportCodeCity.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unity/ViewportCodeCity/WanzyeeStudio.Runtime.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/unity/ViewportCodeCity/WanzyeeStudio.Runtime.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unity/ViewportCodeCity/test.json" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,10 +40,64 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "unity-viewport",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunManager" selected="JUnit.TestViewportAndJson.SimpleTest1">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.Main" />
+      <module name="code-city-final" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestViewportAndJson.SimpleTest1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="code-city-final" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example" />
+      <option name="MAIN_CLASS_NAME" value="org.example.TestViewportAndJson" />
+      <option name="METHOD_NAME" value="SimpleTest1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="code-city-final" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="code-city-final" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.TestViewportAndJson.SimpleTest1" />
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -34,7 +107,11 @@
       <option name="presentableId" value="Default" />
       <updated>1710353618274</updated>
       <workItem from="1710353619174" duration="4000" />
+      <workItem from="1710861842234" duration="4621000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
 </project>

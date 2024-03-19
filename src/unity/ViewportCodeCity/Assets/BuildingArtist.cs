@@ -26,6 +26,7 @@ public class BuildingArtist : MonoBehaviour, IArtist
             );
 
             buildingObject.Info = buildingInfo;
+            
 
             buildingObject.transform.localScale = new Vector3(
                 buildingInfo.dimX,

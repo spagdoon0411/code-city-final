@@ -6,7 +6,7 @@ public class BuildingDataRepository : MonoBehaviour, IArtistManager
 {
     /* JSON file path configuration fields accessible from the Unity editor. */
     [Header("File Storage Config")]
-    public string fileName = "test.json";
+    public string fileName = "BuildingData.json";
     public string dirPath;
     
     /* Place for a single observer-like building artist. Accessible from Unity editor. */
@@ -49,7 +49,7 @@ public class BuildingDataRepository : MonoBehaviour, IArtistManager
          // TODO: remove before deploying.
          foreach (var buildingInfo in WorldData.BuildingInfos)
              Debug.Log(
-                 $"Building found with size \n\t{buildingInfo.dimX} \n\t{buildingInfo.dimY} \n\t{buildingInfo.dimZ} \nat location \n\t{buildingInfo.locX} \n\t{buildingInfo.locY} \n\t{buildingInfo.locZ}.");
+                 $"Building {buildingInfo.name} with {buildingInfo.methods} methods and fields found with size \n\t{buildingInfo.dimX} \n\t{buildingInfo.dimY} \n\t{buildingInfo.dimZ} \nat location \n\t{buildingInfo.locX} \n\t{buildingInfo.locY} \n\t{buildingInfo.locZ}.");
          
          CommissionArtists();
     }
