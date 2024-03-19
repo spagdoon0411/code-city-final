@@ -24,8 +24,6 @@ public class BuildingInfoUI : MonoBehaviour
         VisualElement buildingInfoGroup = buildingInfoRoot.Query<VisualElement>("BuildingInfoContainer");
         buildingInfoTextLabel = buildingInfoGroup.Query<Label>("Information");
         buildingInfoPackageLabel = buildingInfoGroup.Query<Label>("PackageName");
-        
-        Debug.Log($"buildingInfoTextLabel is {buildingInfoTextLabel}");
 
         Instance = this;
     }
@@ -39,8 +37,6 @@ public class BuildingInfoUI : MonoBehaviour
 
         buildingInfoTextLabel.text = infoString;
         buildingInfoPackageLabel.text = className;
-        
-        Debug.Log("Building info should be displayed here.");
     }
 
     /* Clears the contents of the UI info display */
@@ -48,7 +44,5 @@ public class BuildingInfoUI : MonoBehaviour
     {
         buildingInfoTextLabel.text = "";
         buildingInfoPackageLabel.text = "";
-        
-        Debug.Log("Building info should be cleared here.");
     }
 }
