@@ -26,7 +26,9 @@ public class Viewport {
 
     private final String templateExePath;
 
-    public Viewport(List<TempBuildingInfo> buildingInfos)
+    private IEncoder encoder;
+
+    public Viewport(List<TempBuildingInfo> buildingInfos, IEncoder encoder)
     {
         this.id = idAssignCounter++;
         this.buildingInfos = buildingInfos;
@@ -38,6 +40,7 @@ public class Viewport {
                 + File.separator  + getPlatformExeName();
 
         this.viewportExe = new File(templateExePath);
+        this.encoder = encoder;
     }
 
     private String getPlatformExeName()
@@ -122,7 +125,7 @@ public class Viewport {
 
         File viewportTempExe = copyViewportToTempDirectory(viewportExe, viewportDirectory);
 
-        TempJSONEncoder.encodeBuildingsInDir(buildingInfos, viewportDirectory);
+        encoder.encodeBuildingsInDir(buildingInfos, viewportDirectory);
 
         launchViewportExeInTempDir(viewportTempExe, viewportDirectory);
     }

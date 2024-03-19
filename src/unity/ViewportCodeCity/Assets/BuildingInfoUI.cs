@@ -32,8 +32,8 @@ public class BuildingInfoUI : MonoBehaviour
     /* Displays the contents of a BuildingInfo on the screen. */
     public void DisplayBuildingInfo(BuildingInfo buildingInfo)
     {
-        string className = "ExampleName";
-        string infoString = $"dimX: {buildingInfo.dimX}\ndimY: {buildingInfo.dimY}\ndimZ: {buildingInfo.dimZ}";
+        string className = buildingInfo.name;
+        string infoString = $"Methods: {buildingInfo.methods}\nFields: {buildingInfo.fields}";
 
         buildingInfoTextLabel.text = infoString;
         buildingInfoPackageLabel.text = className;

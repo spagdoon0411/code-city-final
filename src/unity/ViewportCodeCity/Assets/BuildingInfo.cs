@@ -4,6 +4,12 @@ using Newtonsoft.Json;
 [Serializable]
 public class BuildingInfo
 {
+    [JsonProperty("name")] public string name;
+
+    [JsonProperty("methods")] public int methods;
+
+    [JsonProperty("fields")] public int fields;
+    
     // Position vector
     [JsonProperty("locX")] public float locX;
 
