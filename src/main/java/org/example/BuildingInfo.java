@@ -53,4 +53,9 @@ public class BuildingInfo {
     public void setFields(int fields) { this.fields = fields; }
     public void setMethods(int methods) { this.methods = methods; }
     public void setName(String name) { this.name = name; }
+
+    @Override
+    public String toString(){
+        return "("+locX+", "+locY+", "+locZ+") Name: "+name;
+    }
 }
