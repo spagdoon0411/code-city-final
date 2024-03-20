@@ -1,4 +1,4 @@
-package parks;
+package parks.bench;
 
 public class Bench {
 

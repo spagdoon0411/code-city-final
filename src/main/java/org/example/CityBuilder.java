@@ -1,6 +1,7 @@
 package org.example;
 
 import java.util.ArrayList;
+import java.util.StringTokenizer;
 
 public class CityBuilder {
     private Block root;
@@ -10,9 +11,9 @@ public class CityBuilder {
 
     public void generateCity(){
         generateBlockTree(root);
-        //root.setDimensions(0, 0, 0);
-        //root.generateWidth();
-        //root.placeSubBlocks();
+        root.setDimensions(0, 0, 0);
+        root.generateWidth();
+        root.placeSubBlocks();
     }
 
     /**
@@ -30,13 +31,19 @@ public class CityBuilder {
             // if package matches that of parent but has subpackage, check if encountered
             // if not encountered, make a new Block. call generateBlockTree on that block.
             FileInfo fi = FileInfoRepo.getFileInfos().get(i);
-            System.out.println(fi.getPackage()+"\n"+parent.getLevel());
+            //System.out.println(fi.getPackage()+"\n"+parent.getLevel());
             if(parent.getPackage().isEmpty() && fi.getPackage().isEmpty() || parent.getPackage().equals(fi.getPackage())){
                 parent.getChildren().add(new Building(fi, parent));
-            }else if(parent.getPackage().startsWith(fi.getPackage()) && !encountered(parent.getChildren(), fi, parent.getLevel())){
+            }else if(fi.getPackage().startsWith(parent.getPackage()) && !encountered(parent.getChildren(), fi, parent.getLevel())){
                 String nextPack = "";
                 if(fi.getPackage().contains(".")){
-                    nextPack = fi.getPackage().split(".")[parent.getLevel()];
+                    StringTokenizer st = new StringTokenizer(fi.getPackage(), ".");
+                    System.out.println(st.countTokens());
+                    int n = 0;
+                    while(n <= parent.getLevel() && st.hasMoreTokens()){
+                        nextPack = st.nextToken();
+                        n++;
+                    }
                 }else{
                     nextPack = fi.getPackage();
                 }
@@ -53,8 +60,17 @@ public class CityBuilder {
     public boolean encountered(ArrayList<Block> blocks, FileInfo fi, int level){
         for(int i = 0; i < blocks.size(); i++){
             if(!(blocks.get(i) instanceof Building)){
-                String nextPack = blocks.get(i).getPackage().split(".")[level];
-                if(nextPack.equals(fi.getPackage().split(".")[level])){
+                StringTokenizer st1 = new StringTokenizer(blocks.get(i).getPackage(), ".");
+                StringTokenizer st2 = new StringTokenizer(fi.getPackage(), ".");
+                String blockPack = "";
+                String filePack = "";
+                int n = 0;
+                while(n <= level && st1.hasMoreTokens() && st2.hasMoreTokens()){
+                    blockPack = st1.nextToken();
+                    filePack = st2.nextToken();
+                    n++;
+                }
+                if(blockPack.equals(filePack)){
                     return true;
                 }
             }
