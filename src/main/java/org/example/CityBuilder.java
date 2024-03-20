@@ -5,15 +5,27 @@ import java.util.StringTokenizer;
 
 public class CityBuilder {
     private Block root;
+    private ArrayList<BuildingInfo> buildingInfos;
+
+
     public CityBuilder(){
         root = new Block("", 0, null, new ArrayList<Block>());
+        buildingInfos = new ArrayList<BuildingInfo>();
     }
 
+
+    /**
+     * This method generates the city
+     */
     public void generateCity(){
         generateBlockTree(root);
         root.setDimensions(0, 0, 0);
         root.generateWidth();
         root.placeSubBlocks();
+        generateBuildingInfoList(root);
+        /*for(BuildingInfo bi : buildingInfos){
+            System.out.println(bi.toString());
+        }*/
     }
 
     /**
@@ -77,8 +89,48 @@ public class CityBuilder {
         }
         return false;
     }
+    
+
+    public void generateBuildingInfoList(Block parent){
+        for(int i = 0; i < parent.getChildren().size(); i++){
+            Block blo = parent.getChildren().get(i);
+            if(!(blo instanceof Building)){
+                generateBuildingInfoList(blo);
+                buildingInfos.add(
+                    new BuildingInfo(
+                        blo.getPosX(), 
+                        blo.getPosY(), 
+                        blo.getLevel()*2,
+                        blo.getWidth(),
+                        blo.getWidth(),
+                        2, 0, 0,
+                        blo.getPackage()
+                    )
+                );
+            }else{
+                Building building = (Building)blo;
+                buildingInfos.add(
+                    new BuildingInfo(
+                        building.getPosX(), 
+                        building.getPosY(), 
+                        building.getLevel()*2,
+                        building.getWidth(),
+                        building.getWidth(),
+                        building.getHeight(),
+                        building.getDetails().getNumFields(),
+                        building.getDetails().getNumMethods(),
+                        building.getDetails().getName()
+                    )
+                );
+            }
+        }
+    }
 
     public Block getRoot(){
         return root;
+    }
+
+    public ArrayList<BuildingInfo> getBuildingInfos(){
+        return buildingInfos;
     }
 }
