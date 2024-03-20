@@ -22,7 +22,7 @@ public class UnityViewport extends Viewport {
         return this.id;
     }
 
-    private final List<TempBuildingInfo> buildingInfos;
+    private final List<BuildingInfo> buildingInfos;
 
     private final String templateExePath;
 
@@ -30,7 +30,7 @@ public class UnityViewport extends Viewport {
 
     private String sourceStub;
 
-    public UnityViewport(List<TempBuildingInfo> buildingInfos, IEncoder encoder)
+    public UnityViewport(List<BuildingInfo> buildingInfos, IEncoder encoder)
     {
         super(buildingInfos, encoder);
         this.id = idAssignCounter++;
@@ -91,7 +91,7 @@ public class UnityViewport extends Viewport {
         }
     }
 
-    private void launchViewportExeInTempDir(File viewportExe, File viewportDirectory)
+    private Process  launchViewportExeInTempDir(File viewportExe, File viewportDirectory)
     {
         /* Launch the viewport instance in the temporary directory. The viewport exe is responsible for
          * reading the building JSON data in its current working directory, so set the CWD to the
@@ -105,12 +105,12 @@ public class UnityViewport extends Viewport {
                 System.setProperty("user.dir", previousCWD);
             }
             else if(platform == Platform.WINDOWS) {
-                Runtime.getRuntime().exec(viewportExe.getAbsolutePath(), null, viewportDirectory);
+                return Runtime.getRuntime().exec(viewportExe.getAbsolutePath(), null, viewportDirectory);
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
+        return null;
     }
 
     private File copyViewportToTempDirectory(File viewportTemplateExe, File viewportDirectory)

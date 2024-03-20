@@ -35,7 +35,8 @@ public class SplashScreen extends JWindow {
         progressBar = new JProgressBar(0, 100);
         progressBar.setValue(0);
         progressBar.setStringPainted(true);
-        progressBar.setForeground(Color.DARK_GRAY);
+        progressBar.setForeground(Color.WHITE);
+        progressBar.setBackground(new Color(108, 147, 143, 255));
         progressBar.setBorderPainted(false);
         progressBar.setStringPainted(false);
 
@@ -45,6 +46,10 @@ public class SplashScreen extends JWindow {
 
     public void updateProgress(int progress) {
         progressBar.setValue(progress);
+    }
+
+    public int getProgress(){
+        return progressBar.getValue();
     }
 
     public Boolean isComplete() {
@@ -59,7 +64,7 @@ public class SplashScreen extends JWindow {
         dispose();
     }
 
-    public void run(Boolean auto) {
+    public void run(Boolean auto, int sleepInterval) {
         GraphicsDevice device = GraphicsEnvironment.getLocalGraphicsEnvironment().getScreenDevices()[0];
         device.setFullScreenWindow(this);
         setVisible(true);
@@ -67,7 +72,7 @@ public class SplashScreen extends JWindow {
         if (auto) {
             for (int i = 0; i <= 100; i++) {
                 try {
-                    Thread.sleep(SLEEP_INTERVAL);
+                    Thread.sleep(sleepInterval);
                 } catch (InterruptedException e) {
                     Thread.currentThread().interrupt();
                     return;
@@ -75,6 +80,10 @@ public class SplashScreen extends JWindow {
                 updateProgress(i);
             }
         }
+    }
+
+    public void run(Boolean auto){
+       run(auto, SLEEP_INTERVAL);
     }
 
 }

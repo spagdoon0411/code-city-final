@@ -101,6 +101,6 @@ public class JsonBuilder implements IEncoder {
     private void loadJson(String buildingSerialization, File tempDir) {
         File tempJsonFile = new File(tempDir.getAbsolutePath() + File.separator + "BuildingData.json");
         createJsonFileFromString(buildingSerialization, tempJsonFile);
-\
+
     }
 }
