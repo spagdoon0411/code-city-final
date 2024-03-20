@@ -10,11 +10,17 @@ public class CityBuilder {
 
     public void generateCity(){
         generateBlockTree(root);
-        root.setDimensions(0, 0, 0);
-        root.generateWidth();
-        root.placeSubBlocks();
+        //root.setDimensions(0, 0, 0);
+        //root.generateWidth();
+        //root.placeSubBlocks();
     }
 
+    /**
+     * this method contains the algorithm for generating a tree structure composed
+     * of blocks and buildings. Blocks can be nested inside other blocks corresponding to
+     * the nesting of packages. this function is recursive.
+     * @param parent the root of the tree that will be generated.
+     */
     public void generateBlockTree(Block parent){
         // loop through the file info repo, selecting for matching package beginnings
         //generate blocks for each new package at the level we are at.
@@ -24,10 +30,10 @@ public class CityBuilder {
             // if package matches that of parent but has subpackage, check if encountered
             // if not encountered, make a new Block. call generateBlockTree on that block.
             FileInfo fi = FileInfoRepo.getFileInfos().get(i);
-            System.out.println(fi.getPackage());
+            System.out.println(fi.getPackage()+"\n"+parent.getLevel());
             if(parent.getPackage().isEmpty() && fi.getPackage().isEmpty() || parent.getPackage().equals(fi.getPackage())){
                 parent.getChildren().add(new Building(fi, parent));
-            }else if(fi.getPackage().startsWith(parent.getPackage()) && !encountered(parent.getChildren(), fi, parent.getLevel())){
+            }else if(parent.getPackage().startsWith(fi.getPackage()) && !encountered(parent.getChildren(), fi, parent.getLevel())){
                 String nextPack = "";
                 if(fi.getPackage().contains(".")){
                     nextPack = fi.getPackage().split(".")[parent.getLevel()];
@@ -38,6 +44,7 @@ public class CityBuilder {
                 if(parent.getLevel() == 0){
                     bl = new Block(nextPack, 1, parent, new ArrayList<Block>());
                 }
+                parent.getChildren().add(bl);
                 generateBlockTree(bl);
             }
         }
