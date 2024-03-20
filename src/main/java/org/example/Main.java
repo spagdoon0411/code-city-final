@@ -13,7 +13,6 @@ public class Main {
         }
         FileDownloader fileDownloader = new FileDownloader(repoUrl, downloadPath);
         fileDownloader.downloadFiles();
-        System.out.println("Files and folders downloaded");
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
                 new FileViewer(downloadPath);

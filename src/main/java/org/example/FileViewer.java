@@ -58,7 +58,7 @@ public class FileViewer extends JFrame {
             for (File file : files) {
                 StringBuilder indentBuilder = new StringBuilder();
                 for (int i = 0; i < indent; i++) {
-                    indentBuilder.append("      ");
+                    indentBuilder.append("  ");
                 }
                 String indentString = indentBuilder.toString();
                 if (file.isDirectory()) {
