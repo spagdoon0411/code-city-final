@@ -1,0 +1,2 @@
+/Users/spandansuthar/Projects/code-city-final/src/unity/ViewportCodeCity/obj/Debug/Assembly-CSharp.csproj.AssemblyReference.cache
+/Users/spandansuthar/Projects/code-city-final/src/unity/ViewportCodeCity/obj/Debug/Assembly-CSharp.csproj.CoreCompileInputs.cache
