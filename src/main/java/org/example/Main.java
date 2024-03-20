@@ -26,14 +26,17 @@ public class Main {
         SplashScreen splashScreen = new SplashScreen(imagePath);
         FileDownloader fileDownloader = new FileDownloader(remoteUrl, downloadPath);
         ProjectParser projectParser = new ProjectParser(downloadPath);
-        FileViewer fileViewer = new FileViewer(downloadPath);
         CityBuilder cityBuilder = new CityBuilder();
         IEncoder encoder = new JsonBuilder();
         FileInfoRepo  fileInfoRepo = FileInfoRepo.getInstance();
 
         fileDownloader.downloadFiles();
+
+        FileViewer fileViewer = new FileViewer(downloadPath);
+
         projectParser.generateInfos();
         cityBuilder.generateCity();
+
 
         ArrayList<BuildingInfo>  buildingInfos =  cityBuilder.getBuildingInfos();
         UnityViewport v = new UnityViewport(buildingInfos, encoder);
