@@ -7,5 +7,8 @@ public class TestMain {
         for(FileInfo f : FileInfoRepo.getFileInfos()){
             System.out.println(f.toString());
         }
+        CityBuilder city = new CityBuilder();
+        city.generateCity();
+        System.out.println(city.getRoot().toString());
     }
 }

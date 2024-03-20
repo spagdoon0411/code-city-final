@@ -11,6 +11,7 @@ public class FileInfo {
     private int numMethods;
     private int numFields;
     private int numLocalVars;
+    private Integer numReferences;
 
     public FileInfo(String path, String name, String pack, ArrayList<String> deps, int nM, int nF, int nV){
         this.path = path;
@@ -78,5 +79,19 @@ public class FileInfo {
 
     public int getNumLocalVars(){
         return numLocalVars;
+    }
+
+    public int getNumReferences(){
+        if(numReferences != null){
+            return numReferences.intValue();
+        }
+        int refCount = 0;
+        for(int i = 0; i < FileInfoRepo.getFileInfos().size(); i++){
+            Integer deps = FileInfoRepo.getFileInfos().get(i).getDependencies().get(name);
+            if(deps != null){
+                refCount += deps.intValue();
+            }
+        }
+        return refCount;
     }
 }

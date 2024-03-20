@@ -75,7 +75,12 @@ public class FileVisitor extends VoidVisitorAdapter<Void> {
     @Override
     public void visit(PackageDeclaration pd, Void arg){
         super.visit(pd, arg);
-        pack = pd.getNameAsString();
+        String p = pd.getNameAsString();
+        if(p == null){
+            pack = "";
+        }else{
+            pack = p;
+        }
     }
 
     @Override
