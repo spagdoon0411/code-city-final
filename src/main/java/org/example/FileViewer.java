@@ -46,21 +46,30 @@ public class FileViewer extends JFrame {
         buttonPanel.add(confirmButton);
         buttonPanel.add(exitButton);
         panel.add(buttonPanel, BorderLayout.SOUTH);
-        displayFiles(textArea);
+        displayFiles(textArea, folderPath, 0);
         add(panel);
         setVisible(true);
     }
 
-    private void displayFiles(JTextArea textArea) {
-        File folder = new File(folderPath);
+    private void displayFiles(JTextArea textArea, String path, int indent) {
+        File folder = new File(path);
         File[] files = folder.listFiles();
         if (files != null) {
             for (File file : files) {
-                textArea.append(file.getName() + "\n");
+                StringBuilder indentBuilder = new StringBuilder();
+                for (int i = 0; i < indent; i++) {
+                    indentBuilder.append("      ");
+                }
+                String indentString = indentBuilder.toString();
+                if (file.isDirectory()) {
+                    textArea.append(indentString + "[Folder] " + file.getName() + "\n");
+                    displayFiles(textArea, file.getAbsolutePath(), indent + 1);
+                } else {
+                    textArea.append(indentString + "[File] " + file.getName() + "\n");
+                }
             }
         } else {
             textArea.append("No files found.");
         }
     }
 }
-
