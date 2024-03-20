@@ -1,80 +1,106 @@
 package org.example;
 
 import com.google.gson.Gson;
-import java.io.FileWriter;
+import com.google.gson.GsonBuilder;
+import java.io.File;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
-class BuildingInfo {
-    private String locX, locY, locZ;
-    private String dimX, dimY, dimZ;
-    private String fields, methods;
-    private String name;
-    private List<String> incomingReferences;
-    private List<String> outgoingReferences;
+/**
+ * Responsible for encoding a list of BuildingInfo objects into a JSON format
+ * and saving it to a specified directory.
+ */
+public class JsonBuilder implements IEncoder {
 
-    public BuildingInfo(String locX, String locY, String locZ, String dimX, String dimY, String dimZ, String fields, String methods, String name, List<String> incomingReferences, List<String> outgoingReferences) {
-        this.locX = locX;
-        this.locY = locY;
-        this.locZ = locZ;
-        this.dimX = dimX;
-        this.dimY = dimY;
-        this.dimZ = dimZ;
-        this.fields = fields;
-        this.methods = methods;
-        this.name = name;
-        this.incomingReferences = incomingReferences;
-        this.outgoingReferences = outgoingReferences;
+    /**
+     * Encodes a list of BuildingInfo objects into a JSON file in the specified directory.
+     *
+     * @param buildingInfos List of BuildingInfo objects to encode.
+     * @param tempDir The directory where the JSON file will be saved.
+     */
+    @Override
+    public void encodeBuildingsInDir(List<BuildingInfo> buildingInfos, File tempDir) {
+        String buildingSerialization = serializeBuildings(buildingInfos);
+        loadJson(buildingSerialization, tempDir);
     }
 
-    // Getters
-    public String getLocX() { return locX; }
-    public String getLocY() { return locY; }
-    public String getLocZ() { return locZ; }
-    public String getDimX() { return dimX; }
-    public String getDimY() { return dimY; }
-    public String getDimZ() { return dimZ; }
-    public String getFields() { return fields; }
-    public String getMethods() { return methods; }
-    public String getName() { return name; }
-    public List<String> getIncomingReferences() { return incomingReferences; }
-    public List<String> getOutgoingReferences() { return outgoingReferences; }
+    /**
+     * Converts a list of BuildingInfo objects into a JSON string.
+     * Each numeric value is converted to a string, ensuring whole numbers do not contain '.0'.
+     *
+     * @param buildingInfos List of BuildingInfo objects to serialize.
+     * @return A string representing the JSON serialization of the buildingInfos.
+     */
+    private String serializeBuildings(List<BuildingInfo> buildingInfos) {
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        List<Map<String, String>> serializedBuildings = new ArrayList<>();
 
-    // Setters
-    public void setLocX(String locX) { this.locX = locX; }
-    public void setLocY(String locY) { this.locY = locY; }
-    public void setLocZ(String locZ) { this.locZ = locZ; }
-    public void setDimX(String dimX) { this.dimX = dimX; }
-    public void setDimY(String dimY) { this.dimY = dimY; }
-    public void setDimZ(String dimZ) { this.dimZ = dimZ; }
-    public void setFields(String fields) { this.fields = fields; }
-    public void setMethods(String methods) { this.methods = methods; }
-    public void setName(String name) { this.name = name; }
-    public void setIncomingReferences(List<String> incomingReferences) { this.incomingReferences = incomingReferences; }
-    public void setOutgoingReferences(List<String> outgoingReferences) { this.outgoingReferences = outgoingReferences; }
+        for (BuildingInfo buildingInfo : buildingInfos) {
+            Map<String, String> buildingMap = new LinkedHashMap<>();
+            buildingMap.put("name", buildingInfo.getName());
+            buildingMap.put("methods", Integer.toString(buildingInfo.getMethods()));
+            buildingMap.put("fields", Integer.toString(buildingInfo.getFields()));
+            buildingMap.put("locX", formatNumberAsString(buildingInfo.getLocX()));
+            buildingMap.put("locY", formatNumberAsString(buildingInfo.getLocY()));
+            buildingMap.put("locZ", formatNumberAsString(buildingInfo.getLocZ()));
+            buildingMap.put("dimX", formatNumberAsString(buildingInfo.getDimX()));
+            buildingMap.put("dimY", formatNumberAsString(buildingInfo.getDimY()));
+            buildingMap.put("dimZ", formatNumberAsString(buildingInfo.getDimZ()));
+            serializedBuildings.add(buildingMap);
+        }
 
-}
+        return gson.toJson(serializedBuildings);
+    }
 
-public class JsonBuilder {
-
-    public static void createBuildingInfoJson(List<BuildingInfo> buildings) {
-        Gson gson = new Gson();
-        String json = gson.toJson(buildings);
-
-        try (FileWriter writer = new FileWriter("buildings.json")) {
-            writer.write(json);
-        } catch (IOException e) {
-            e.printStackTrace();
+    /**
+     * Formats a numeric value as a string. If the number is a whole number,
+     * it is formatted without a decimal point. Otherwise, it is formatted
+     * with a single decimal place.
+     *
+     * @param number The number to format.
+     * @return A string representation of the number.
+     */
+    private String formatNumberAsString(float number) {
+        if (number == (int) number) {
+            return Integer.toString((int) number);
+        } else {
+            return String.format("%.1f", number);
         }
     }
 
-    public static void main(String[] args) {
-        // Test the JSON creation process -- Make createBuildingInfoJson method static during testing
-        List<BuildingInfo> buildings = new ArrayList<>();
-        buildings.add(new BuildingInfo("3.4", "4.5", "6.5", "3.4", "3.2", "12.7", "3", "12", "BuildingA", Arrays.asList("BuildingB"), Arrays.asList("BuildingC")));
-        createBuildingInfoJson(buildings);
+    /**
+     * Creates a JSON file from a given string and saves it to a specified directory.
+     * If the file already exists, it is overwritten.
+     *
+     * @param buildingSerialization The JSON string to save.
+     * @param tempJsonFile The directory where the JSON file will be saved.
+     */
+    private void createJsonFileFromString(String buildingSerialization, File tempJsonFile) {
+        try {
+            if (!tempJsonFile.getParentFile().exists()) {
+                tempJsonFile.getParentFile().mkdirs();
+            }
+            try (PrintWriter writer = new PrintWriter(tempJsonFile)) {
+                writer.println(buildingSerialization);
+            }
+        } catch (IOException e) {
+            throw new RuntimeException("Failed to write to file: " + tempJsonFile.getAbsolutePath(), e);
+        }
+    }
 
+    /**
+     * Helper method to manage the creation of the JSON file within the specified directory.
+     *
+     * @param buildingSerialization The JSON string to be saved.
+     * @param tempDir The directory where the JSON file will be saved.
+     */
+    private void loadJson(String buildingSerialization, File tempDir) {
+        File tempJsonFile = new File(tempDir.getAbsolutePath() + File.separator + "BuildingData.json");
+        createJsonFileFromString(buildingSerialization, tempJsonFile);
+\
     }
 }
